@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList, Text, Image, StyleSheet } from 'react-native';
+import { View, FlatList, Image, StyleSheet } from 'react-native';
 import { ListItem } from 'react-native-elements';
 
 function Menu(props) {
@@ -12,17 +12,13 @@ function Menu(props) {
       });
     const renderMenuItem = ({item, index}) => {
 
-        return (
-                
-                <ListItem>
+        return (                
+                <ListItem onPress={() => props.onPress(item.id)}>
                     <Image style={styles.tinyLogo} source={require('./images/uthappizza.png')}/>
-                    
-                    <ListItem.Content>
+                     <ListItem.Content>
                         <ListItem.Title>{item.name}</ListItem.Title>
                         <ListItem.Subtitle>{item.description}</ListItem.Subtitle>
-                    </ListItem.Content>
-                    
-                    
+                    </ListItem.Content>                    
                 </ListItem>
         );
     };
