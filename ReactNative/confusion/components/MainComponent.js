@@ -39,7 +39,7 @@ function MenuNavigatorScreen({ navigation }) {
             }}
         >
             <MenuNavigator.Screen
-                name="Menud"
+                name="Menu"
                 component={Menu}
             />
             <MenuNavigator.Screen
@@ -81,7 +81,8 @@ const Drawer = createDrawerNavigator();
 
 function MainNavigator({ navigation }) {
     return(
-        <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Navigator initialRouteName="Home"
+            drawerStyle = {{backgroundColor: '#D1C4E9'}}>
           <Drawer.Screen name="Home" component={HomeNavigatorScreen} />
           <Drawer.Screen name="Menu" component={MenuNavigatorScreen} />
         </Drawer.Navigator>
