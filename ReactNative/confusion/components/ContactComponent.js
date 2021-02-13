@@ -15,7 +15,7 @@ class Contact extends Component {
                 <Text style={{margin: 10}}>Fax: +852 8765 4321</Text>
                 <Text style={{margin: 10}}>Email:confusion@food.net</Text>
             </Card>
-    );
+        );
     }
 }
 
