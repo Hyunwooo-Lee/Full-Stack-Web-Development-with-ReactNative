@@ -9,6 +9,20 @@ import Home from './HomeComponent';
 import About from './AboutComponent';
 import Contact from  './ContactComponent';
 import { Icon } from 'react-native-elements';
+import { connect } from 'react-redux';
+import { fetchDishes, fetchComments, fetchLeaders, fetchPromos } from '../redux/ActionCreater';
+
+const mapStateToProps = state => {
+    return {
+    }
+}
+
+const mapDispatchToProps = dispatch => ({
+    fetchDishes: () => dispatch(fetchDishes()),
+    fetchLeaders: () => dispatch(fetchLeaders()),
+    fetchComments: () => dispatch(fetchComments()),
+    fetchPromos: () => dispatch(fetchPromos()),
+});
 
 
 {/** USE OF CURRENT VERSION OF REACT NATIVE
@@ -227,6 +241,13 @@ function MainNavigator({ navigation }) {
   
 class Main extends Component {
 
+  componentDidMount() {
+      this.props.fetchDishes();
+      this.props.fetchComments();
+      this.props.fetchPromos();
+      this.props.fetchLeaders();
+  }
+
   render() {
  
     return (
@@ -261,4 +282,4 @@ const styles  = StyleSheet.create({
     }
 })
 
-export default Main;
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

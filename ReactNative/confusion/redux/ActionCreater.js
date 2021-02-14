@@ -27,7 +27,7 @@ export const commentsFailed = (errmess) => ({
     payload: errmess
 });
 
-export const addComments = (comments)= ({
+export const addComments = (comments) => ({
     type:ActionTypes.ADD_COMMENTS,
     payload: comments
 });
@@ -44,7 +44,7 @@ export const fetchDishes = () => (dispatch) => {
             else {
                 var error = new Error('Error ' + response.status + ': ' + response.statusText);
                 error.response = response;
-                throw error;
+                throw error; 
             }
         },
         error => {
@@ -65,7 +65,7 @@ export const dishesFailed = (errmess) => ({
     payload: errmess
 });
 
-export const addDishes = (dishes)= ({
+export const addDishes = (dishes) => ({
     type:ActionTypes.ADD_DISHES,
     payload: dishes
 });
@@ -102,7 +102,7 @@ export const promosFailed = (errmess) => ({
     payload: errmess
 });
 
-export const addPromos = (promos)= ({
+export const addPromos = (promos) => ({
     type:ActionTypes.ADD_PROMOS,
     payload: promos
 });
@@ -139,7 +139,7 @@ export const leadersFailed = (errmess) => ({
     payload: errmess
 });
 
-export const addLeaders = (leaders)= ({
+export const addLeaders = (leaders) => ({
     type:ActionTypes.ADD_LEADERS,
     payload: leaders
 });

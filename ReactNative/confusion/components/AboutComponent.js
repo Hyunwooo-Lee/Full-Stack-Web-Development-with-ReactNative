@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { ScrollView, Text, StyleSheet, FlatList, Image, SafeAreaView } from 'react-native';
 import { Card } from 'react-native-elements';
-import { LEADERS } from '../shared/leaders'
 import { ListItem } from 'react-native-elements';
+import { connect } from 'react-redux';
+import { baseUrl } from '../shared/baseUrl';
+
+const mapStateToProps = state => {
+    return {
+        leaders: state.leaders
+    }
+}
 
 class About extends Component {
-
-    constructor(props){
-        super(props);
-        this.state = {
-            leaders: LEADERS
-        }
-    }
 
     render() {
         const styles = StyleSheet.create({
@@ -24,7 +24,7 @@ class About extends Component {
         const renderLeaderItem = ({item, index}) => {    
             return (                
                     <ListItem>
-                        <Image style={styles.tinyLogo} source={require('./images/alberto.png')}/>
+                        <Image style={styles.tinyLogo} source={{ uri: baseUrl + item.image }} />
                          <ListItem.Content>
                             <ListItem.Title>{item.name}</ListItem.Title>
                             <ListItem.Subtitle>{item.description}</ListItem.Subtitle>
@@ -48,7 +48,7 @@ class About extends Component {
                 <Card>                
                     <Card.Title>Corporate Leadership</Card.Title>
                     <FlatList 
-                        data={this.state.leaders}
+                        data={this.props.leaders.leaders}
                         renderItem={renderLeaderItem}
                         keyExtractor={item => item.id.toString()}
                     />
@@ -59,4 +59,4 @@ class About extends Component {
     }
 }
 
-export default About;
+export default connect(mapStateToProps)(About);
