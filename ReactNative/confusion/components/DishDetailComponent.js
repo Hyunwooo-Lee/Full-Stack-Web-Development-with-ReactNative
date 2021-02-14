@@ -10,17 +10,17 @@ const mapStateToProps = state => {
         comments: state.comments
     }
 }
-
+ 
 function RenderDish(props) {
     const dish = props.dish;
 
-    if (dish != null) { 
+    if (dish != null) {
         return(
             <Card>                
                 <Card.Image source={{uri: baseUrl + dish.image}} style={{justifyContent: 'center', alignItems: 'center'}} >
                     <Card.FeaturedTitle>{dish.name}</Card.FeaturedTitle>
                 </Card.Image>                
-                <Text style={{margin: 10}}>
+                <Text style={{margin: 10}}> 
                     {dish.description}
                 </Text>                
                 <Icon
