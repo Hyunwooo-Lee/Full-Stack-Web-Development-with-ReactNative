@@ -1,5 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
+import { State } from 'react-native-gesture-handler';
 
 export const fetchComments = () => (dispatch) => {
     return fetch(baseUrl + 'comments')
@@ -153,4 +154,26 @@ export const postFavorite = (dishId) => (dispatch) => {
 export const addFavorite  = (dishId) => ({
     type: ActionTypes.ADD_FAVORITE,
     payload: dishId
+})
+
+export const postComment = (dishId, rating, author, comment) => (dispatch) => {
+
+    const newComment = {
+        dishId: dishId,
+        rating: rating,
+        author: author,
+        comment: comment
+    }
+    newComment.date = new Date().toISOString()
+    console.log("1: " + JSON.stringify(newComment))
+    setTimeout(() => {
+        console.log("2: " + JSON.stringify(newComment))
+        dispatch(addComment(newComment));
+    }, 2000)
+    console.log("3: " + JSON.stringify(newComment))
+}
+
+export const addComment  = (comment) => ({
+    type: ActionTypes.ADD_COMMENT,
+    payload: comment
 })
