@@ -1,5 +1,5 @@
 import React, { Component, useEffect } from 'react';
-import { ScrollView, Text, StyleSheet, FlatList, Image, SafeAreaView, LogBox } from 'react-native';
+import { ScrollView, Text, StyleSheet, FlatList, Image, SafeAreaView} from 'react-native';
 import { Card } from 'react-native-elements';
 import { ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
@@ -37,8 +37,7 @@ class About extends Component {
                         </ListItem.Content>                    
                     </ListItem>
             );
-        };
-
+        }
         if (this.props.leaders.isLoading) {
             return(
                 <SafeAreaView style={{flex: 1}}>
