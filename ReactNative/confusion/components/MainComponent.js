@@ -6,6 +6,7 @@ import { createDrawerNavigator, DrawerItemList, DrawerContentScrollView } from '
 import Menu from './MenuComponent';
 import Dishdetail from './DishDetailComponent';
 import Reservation from './ReservationComponent';
+import Favorites from './FavoriteComponent';
 import Home from './HomeComponent';
 import About from './AboutComponent';
 import Contact from  './ContactComponent';
@@ -200,6 +201,36 @@ function ReservationNavigatorScreen({ navigation }) {
   );
 }
 
+const FavoritesNavigator = createStackNavigator();
+
+function FavoritesNavigatorScreen({ navigation }) {
+  return(
+      <FavoritesNavigator.Navigator
+          screenOptions={{
+              headerStyle: {
+                  backgroundColor: "#512DA8"
+              },
+              headerTintColor: "#fff",
+              headerTitleStyle: {
+                  color: "#fff"            
+              }
+          }}
+      >
+          <FavoritesNavigator.Screen
+              name="My Favorites"
+              component={Favorites}
+              options={{                    
+                headerLeft: () => (
+                    <Icon name='menu' size={24}
+                    color='white'
+                    onPress={() => navigation.toggleDrawer()} />
+                ),                    
+            }}
+          />         
+      </FavoritesNavigator.Navigator>
+  );
+}
+
 const CustomDrawerContentComponent = (props) => (
     <DrawerContentScrollView {...props}>
         <SafeAreaView sytle={styles.container} forceInset={{top: 'always', horizontal: 'never'}}>
@@ -265,6 +296,16 @@ function MainNavigator({ navigation }) {
                         color={tintColor} />
                 )
             }} />
+            <Drawer.Screen name="My Favorites" component={FavoritesNavigatorScreen} 
+            options={{
+                drawerIcon: ({ tintColor }) => (
+                    <Icon
+                        name='heart'
+                        type='font-awesome'
+                        size={24}
+                        color={tintColor} />
+                )
+            }} />
             <Drawer.Screen name="Reserve Table" component={ReservationNavigatorScreen} 
             options={{
                 drawerIcon: ({ tintColor }) => (
@@ -274,7 +315,7 @@ function MainNavigator({ navigation }) {
                         size={24}
                         color={tintColor} />
                 )
-            }} />
+            }} />            
         </Drawer.Navigator>
 
     );
