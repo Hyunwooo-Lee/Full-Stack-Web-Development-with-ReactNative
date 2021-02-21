@@ -1,6 +1,7 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 import { State } from 'react-native-gesture-handler';
+import DishDetailComponent from '../components/DishDetailComponent';
 
 export const fetchComments = () => (dispatch) => {
     return fetch(baseUrl + 'comments')
@@ -177,3 +178,8 @@ export const addComment  = (comment) => ({
     type: ActionTypes.ADD_COMMENT,
     payload: comment
 })
+
+export const deleteFavorite = (dishId) => ({
+    type: ActionTypes.DELETE_FAVORITE,
+    payload: dishId
+});
