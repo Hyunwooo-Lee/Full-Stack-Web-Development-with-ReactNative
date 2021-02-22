@@ -1,7 +1,7 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
-import { State } from 'react-native-gesture-handler';
-import DishDetailComponent from '../components/DishDetailComponent';
+
+
 
 export const fetchComments = () => (dispatch) => {
     return fetch(baseUrl + 'comments')
