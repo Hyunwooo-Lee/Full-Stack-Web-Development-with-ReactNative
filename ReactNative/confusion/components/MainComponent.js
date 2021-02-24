@@ -374,11 +374,11 @@ class Main extends Component {
       NetInfo.fetch()
         .then(state => {
             ToastAndroid.show('Initial Network Connectivity Type: '
-                + state.type+ ', isConnected: ' + state.isConnected,
+                + state.type + ', isConnected: ' + state.isConnected,
                 ToastAndroid.LONG)
         })
       NetInfo.addEventListener(state => {
-          switch(state.type){
+            switch(state.type){
                 case 'none':
                     ToastAndroid.show('You are now offline!', ToastAndroid.LONG);
                     break;
@@ -394,9 +394,9 @@ class Main extends Component {
                 default:
                     break;
 
-          }
-        console.log("Connection type", state.type);
-        console.log("Is connected?", state.isConnected);
+            }
+            console.log("Connection type", state.type);
+            console.log("Is connected?", state.isConnected);
       });    
   }
 
