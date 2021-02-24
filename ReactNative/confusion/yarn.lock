@@ -1047,7 +1047,7 @@
     xcode "^2.1.0"
     xml2js "^0.4.23"
 
-"@expo/config-plugins@^1.0.14":
+"@expo/config-plugins@^1.0.14", "@expo/config-plugins@~1.0.13":
   version "1.0.19"
   resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-1.0.19.tgz#aef514a6ad2f69d9ccd6c370c11cbda74677eed7"
   integrity sha512-4ii5+mmvewoqU8WSOwglfFHahxa3EhwvWlvxIAlWSUBuzbojg8m3HBxwGQh7c+wRldgaiyuexj4vl/PG0fFwCg==
@@ -1734,6 +1734,14 @@
   version "1.9.11"
   resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-1.9.11.tgz#490c752417c17d687e2941659b3c0bff9cb79b83"
   integrity sha512-E7whvvMIl9Ln1sxgug7OAEVWQ69n82iV0d2OWWp5VV52+RW3azKh1IFm4rxdW5/oByMfl7FFL0eHNelGgY4BMQ==
+
+"@react-navigation/bottom-tabs@^5.11.8":
+  version "5.11.8"
+  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.11.8.tgz#0af8d5859b1ad781bdd86e8236ceaed60dc355fe"
+  integrity sha512-/0AiP+QPGKe35NdGxSjq0XpZjYvURy8H2E4rZMRHJ+fUoq+cX0ze/XQeQ8IHMpoc568ZwOGRgdUToUGZEDMpvA==
+  dependencies:
+    color "^3.1.3"
+    react-native-iphone-x-helper "^1.3.0"
 
 "@react-navigation/core@^3.7.9":
   version "3.7.9"
@@ -3133,6 +3141,15 @@ expo-font@~8.4.0:
     fbjs "1.0.0"
     fontfaceobserver "^2.1.0"
 
+expo-image-picker@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-10.0.0.tgz#24a3fd7335094191f148c3d2fbf9b496c500658f"
+  integrity sha512-smANMTtxqPDxGYPVQrppJAKxla2/UN4bTGfcmX7c8X8psaNUd4Bh8z9Uk/NUz00SGUWrU0Oa1K/rVrX1e0c2Hw==
+  dependencies:
+    "@expo/config-plugins" "~1.0.13"
+    expo-permissions "~11.0.0"
+    uuid "7.0.2"
+
 expo-keep-awake@~8.4.0:
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-8.4.0.tgz#346d0988e6364c46050fef4b7829f302ef3e603d"
@@ -3181,7 +3198,7 @@ expo-notifications@^0.9.0:
     fs-extra "^9.0.1"
     uuid "^3.4.0"
 
-expo-permissions@^11.0.0:
+expo-permissions@^11.0.0, expo-permissions@~11.0.0:
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/expo-permissions/-/expo-permissions-11.0.0.tgz#10889073121fea42bbfc35f09a35fa17a316b233"
   integrity sha512-5+sFdU1HS/4aK9O7AsoLSNjG4f0UzlA3/nBHOPnWxxY2HRFnQp764tSsfSJRnGhM89Qxort6n2RzOusMoNP5ig==
@@ -6627,6 +6644,11 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
+
+uuid@7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.2.tgz#7ff5c203467e91f5e0d85cfcbaaf7d2ebbca9be6"
+  integrity sha512-vy9V/+pKG+5ZTYKf+VcphF5Oc6EFiu3W8Nv3P3zIh0EqVI80ZxOzuPfe9EHjkFNvf8+xuTHVeei4Drydlx4zjw==
 
 uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"
